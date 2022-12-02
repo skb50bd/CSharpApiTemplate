@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Template.Services</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Data\Template.Data.csproj" />
+      <ProjectReference Include="..\Domain\Template.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.0" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+      <PackageReference Include="FluentValidation" Version="11.4.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
+      <PackageReference Include="LanguageExt.Core" Version="4.4.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.Abstractions" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.0" />
+    </ItemGroup>
+
+</Project>

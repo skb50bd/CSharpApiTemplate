@@ -1,0 +1,9 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Shakib Haris",
+    "classifications": [ "Web API", "API", "C#", "AutoMapper", "FluentValidation" ],
+    "identity": "ShakibHaris.Template.WebApi",
+    "name": "Shakib's API Template",
+    "shortName": "shakibsapi",
+    "sourceName": "Template"
+  }
