@@ -25,22 +25,22 @@ builder.Services
     {
         var jwtKey = builder.Configuration["Jwt:Key"];
         jwtKey.ThrowIfNull();
-        
+
         var jwtIssuer = builder.Configuration["Jwt:Issuer"];
         jwtIssuer.ThrowIfNull();
-        
+
         var jwtAudience = builder.Configuration["Jwt:Audience"];
         jwtAudience.ThrowIfNull();
-        
+
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer           = true,
-            ValidateAudience         = true,
-            ValidateLifetime         = true,
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer              = jwtIssuer,
-            ValidAudience            = jwtAudience,
-            IssuerSigningKey         = jwtKey.ToUtf8SymmetricSecurityKey()
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = jwtKey.ToUtf8SymmetricSecurityKey()
         };
     });
 
@@ -67,4 +67,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();

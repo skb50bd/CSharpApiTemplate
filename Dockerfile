@@ -4,14 +4,15 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-COPY ["Template.Api/Template.Api.csproj", "Template.Api/"]
-COPY ["Template.Domain/Template.Domain.csproj", "Template.Domain/"]
-COPY ["Template.Core/Template.Core.csproj", "Template.Core/"]
-COPY ["Template.Data/Template.Data.csproj", "Template.Data/"]
-RUN dotnet restore "Template.Api/Template.Api.csproj"
+WORKDIR /
+COPY ["src/Api/Template.Api.csproj", "src/Api/"]
+COPY ["src/Domain/Template.Domain.csproj", "src/Domain/"]
+COPY ["src/Core/Template.Core.csproj", "src/Core/"]
+COPY ["src/Data/Template.Data.csproj", "src/Data/"]
+RUN dotnet restore "src/Api/Template.Api.csproj"
 COPY . .
-WORKDIR "/src/Template.Api"
+WORKDIR /src/Api
+RUN ls
 RUN dotnet build "Template.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
